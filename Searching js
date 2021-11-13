@@ -1,0 +1,23 @@
+//binary search
+//works with sorting array of numbers
+
+const startArr = [];
+for (let i=1; i < 100000; i++) {
+    startArr[i] = i;
+    //i = i+5;
+}
+startArr.sort((a, b)=> a-b);
+
+function binarySearch(arr, el) {
+    let left = -1,
+        right = arr.length;
+    while (right - left > 1) {
+        let mid = Math.floor((left + right)/2);
+        if (arr[mid] === el) return mid;
+        else if (arr[mid]  > el) right = mid;
+        else left = mid;
+        
+    }
+    return -1
+
+}
